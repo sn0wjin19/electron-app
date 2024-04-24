@@ -1,6 +1,7 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
+import Background from './Background/Background';
 
 function Hello() {
   return (
@@ -42,9 +43,11 @@ function Hello() {
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
+      <Background>
+        <Routes>
+          <Route path="/" element={<Hello />} />
+        </Routes>
+      </Background>
     </Router>
   );
 }
