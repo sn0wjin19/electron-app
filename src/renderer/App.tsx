@@ -2,6 +2,7 @@ import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Background from './Background/Background';
 import Sidebar from './Sidebar/Sidebar';
+
 function Hello() {
   return (
     <div>

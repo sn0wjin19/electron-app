@@ -1,30 +1,39 @@
 import * as React from 'react';
 import icon from '../../../assets/icon.png';
 
-export default function Sidebar({}) {
+const SidebarContext = React.createContext();
 
-  const [expand, setExpand] = React.useState(true);
+export default function Sidebar({children}) {
 
-  const toggleSidebar = () => {
-    setExpand(!expand);
-  }
+  const [expanded, setExpanded] = React.useState(true);
 
-  return(
+  return (
     <div className='w-64 flex flex-col min-h-screen'>
-      <div className='bg-red-500 p-4 flex justify-between items-center text-white'>
+      <div className='bg-white p-4 flex justify-between items-center'>
         <div id="logo">
-          <img src={icon} alt='logo' className='w-8 h-8' />
+          <img src={icon} alt='logo' className='w-auto h-14' />
         </div>
         <div id='icon'>
           <button type="button" className='btn btn-info'>收回
-            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg> */}
           </button>
         </div>
       </div>
       <div className='flex-grow bg-blue-500 p-4 text-white'>222</div>
       <div className='bg-green-500 p-4 text-white'>footer</div>
     </div>
-  )
+  );
+}
+
+export function SidebarItem({ icon, text, active, alert }) {
+  const [expanded, setExpanded] = useState(true);
+
+  return (
+    <ui className='menu'>
+      <li className='relative flex items-center py-2 px-3 my-1
+        font-medium rounded-md cursor-pointer
+        transition-colors group'>
+          {icon}
+        </li>
+    </ui>
+  );
 }
