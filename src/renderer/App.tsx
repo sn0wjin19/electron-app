@@ -2,8 +2,9 @@ import { HashRouter as Router, Routes, Route, Link, useLocation, useResolvedPath
 import './App.css';
 import Background from './Components/Background/Background';
 import Sidebar, { SidebarItem } from './Components/Sidebar/Sidebar';
-import Home from './Page/Home/Home';
-import { Camera, LayoutDashboard } from 'lucide-react';
+import HomePage from './Page/Home/Home';
+import Cooking from './Page/Cooking/Cooking';
+import { Home, LayoutDashboard, CookingPot } from 'lucide-react';
 
 function Hello() {
   return (
@@ -25,11 +26,13 @@ export default function App() {
         <div className="flex">
           <Sidebar>
             <SidebarItem icon={<LayoutDashboard size={20} />} text={"Dashboard"} link={"/"} />
-            <SidebarItem icon={<Camera size={20} />} text={"Home"} link={"/home"} />
+            <SidebarItem icon={<Home size={20} />} text={"Home"} link={"/home"} />
+            <SidebarItem icon={<CookingPot size={20} />} text={"Cooking"} link={"/cooking"} />
           </Sidebar>
           <Routes>
             <Route path="/" element={<Hello />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/cooking" element={<Cooking />} />
           </Routes>
         </div>
       </Background>
