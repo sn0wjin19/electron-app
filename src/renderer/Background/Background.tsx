@@ -6,5 +6,6 @@ export interface BackgroundProps {
 }
 
 export default function Background({ children }: BackgroundProps) {
+  // return <div className='min-h-screen bg-gradient-to-t'>{children}</div>;
   return <div>{children}</div>;
 }
