@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-to-t': 'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
+        'gradient-to-t':
+          'radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)',
       },
     },
   },

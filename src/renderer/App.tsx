@@ -1,12 +1,13 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Background from './Background/Background';
-import NavBar from './NavBar/NavBar';
-
+import Sidebar from './Sidebar/Sidebar';
 function Hello() {
   return (
     <div>
-      <h1>Hello</h1>
+      <button type="button" className="btn btn-primary">
+        Primary
+      </button>
     </div>
   );
 }
@@ -15,10 +16,13 @@ export default function App() {
   return (
     <Router>
       <Background>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Hello />} />
-        </Routes>
+        {/* <NavBar /> */}
+        <div className="flex">
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Hello />} />
+          </Routes>
+        </div>
       </Background>
     </Router>
   );
